@@ -16,14 +16,21 @@ class Actor
 	#Extrat from CSV
 	def generate_csv_by_query(actor)
 		actorname = []
+		actor_parameter = ["STAGENAME","DOWSTART","DOWEND","FAMILYNAME","FIRSTNAME","GENDER","DOB","DOD","ROLETYPE","ORIGIN","STUDIO","RELATIONSHIPS","RELTYPE","RELNAME"]
 				CSV.foreach(File.path("output.csv")) do |details|
-    				if details[1]==actor["dob"]
-    					actorname << details[0] 
-    				end
+				
+					actor_parameter.each do |name|
+						if actor.has_key?(name) and actor.has_value?(details[actor_parameter.index(name)])
+							actorname << details
+							
+						
+					end
+
+    			end
     				
             	end
 		if actorname.empty?
-			puts "no actor with this date of birth"
+			puts "NO ACTORS WITH THIS PARAMETER"
 	    else		
             puts actorname.to_s
         end   
@@ -32,13 +39,12 @@ class Actor
         	csv << ["NAME"]
   			actorname.each do |name|
   				csv << [name]
-  			puts "#{name}"
   			end
- 			
-  		end 
-     end
+   		end 
+    end
 
 end
+
 parameter_query=Hash.new
 actor=Actor.new
 actor.generate_csv
