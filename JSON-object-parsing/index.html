@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>JSON Parsing</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/parser.js"></script> 
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+	<meta charset="UTF-8">
+</head>
+<body>
+  <div id="loading"><center><img src="images/ajax-loader.gif"></center></div>
+  <table id="mytable" name="mytable"  class="imagetable">
+     <tr>
+        <th>Name</th>
+        <th>Full Name</th>
+        <th>Size</th>
+        <th>Created At</th>
+        <th>Language</th>
+        <th>Has Issues</th>
+        <th>Has Downloads</th>
+        <th>Watchers</th> 
+    </tr>
+    <tbody> 
+        <tr id="addrow">
+            <td > <input type="text" name="value" id='value1'/> </td>
+            <td> <input type="text" name="fullname"  id='value2'/> </td>
+            <td > <input type="text" name="size"  id='value3'/> </td>
+            <td > <input type="text" name="Created At" id='value4' /> </td>
+            <td > <input type="text" name="Language"  id='value5' /> </td>
+            <td> <input type="text" name="Has Issues"  id='value6'/> </td>
+            <td  > <input type="text" name="Has Download>"  id='value7'/> </td>
+            <td > <input type="text" name="Watchers"  id='value8'/> </td>
+            <td> <button id="confirm" type="button" class="GetValues" value="GetValues">CONFIRM</button> </td>
+        </tr>
+      </tbody>  
+      <button id="addbutton" type="button" >ADD ROW</button> 
+      <button id="refresh" type="button" >REFRESH</button>       
+
+ </table> 
+
+</body>
+</html>
